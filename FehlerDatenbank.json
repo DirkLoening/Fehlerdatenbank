@@ -1,0 +1,21 @@
+[
+    {
+        "id": "BASE2002-STR",
+        "fehlercode": "BASE/2002",
+        "funktion": "STR",
+        "beschreibung": "Unbekannte Funktion STR",
+        "ursache": "Netzwerkunterbrechung oder veraltete Programmversion",
+        "gefixtAbVersion": "22.03.28",
+        "antwort": "Bitte pr\u00c3\u00bcfen Sie die Netzwerkverbindung. Dieser Fehler wurde ab CSB-Version 22.03.28 behoben."
+    },
+    {
+        "fehlercode": "22",
+        "funktion": "HONDAMELD",
+        "zeile": "9649",
+        "csb_version": "14084",
+        "version_datum": "02.04.25",
+        "ursache": "Programmfehler",
+        "gefixtAbVersion": "14080",
+        "antwort": "Bitte f\u00c3\u00bcren Sie ein CSB-Programmupdate aus. Dieser Fehler wurde ab CSB-Version 14080 vom 01.04.2025 behoben."
+    }
+]
