@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 def lade_fehlerdatenbank():
     try:
-        with open("Fehlerdatenbank.json", "r") as f:
+        with open("FehlerDatenbank.json", "r") as f:
             return json.load(f)
     except FileNotFoundError:
         return []
