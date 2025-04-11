@@ -31,6 +31,9 @@ def check_fehler():
     csb_version = request.args.get("csb_version")
 
     print(f"Erhaltener Fehlercode: {code}")
+    print(f"Erhaltene Funktion: {funktion}")
+    print(f"Erhaltene Zeile: {zeile}")
+    print(f"Erhaltene CSB-Version: {csb_version}")
 
     datenbank = lade_fehlerdatenbank()
     if not datenbank:
@@ -39,11 +42,6 @@ def check_fehler():
         print(f"Datenbank hat {len(datenbank)} Einträge.")
         
     for eintrag in datenbank:
-        print(f"Erhaltener Fehlercode: {code}")
-        print(f"Erhaltene Funktion: {funktion}")
-        print(f"Erhaltene Zeile: {zeile}")
-        print(f"Erhaltene CSB-Version: {csb_version}")
-
         if (eintrag.get("fehlercode") == code and
             eintrag.get("funktion") == funktion and
             eintrag.get("zeile") == zeile and
