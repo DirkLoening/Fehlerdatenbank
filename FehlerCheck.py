@@ -30,9 +30,9 @@ def check_fehler():
     zeile = request.args.get("zeile")
     csb_version = request.args.get("csb_version")
 
-print(f"Erhaltener Fehlercode: {code}")
+    print(f"Erhaltener Fehlercode: {code}")
 
-datenbank = lade_fehlerdatenbank()
+    datenbank = lade_fehlerdatenbank()
     if not datenbank:
         print("Datenbank ist leer!")
     else:
