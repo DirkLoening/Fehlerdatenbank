@@ -42,6 +42,18 @@ def check_fehler():
         print(f"Datenbank hat {len(datenbank)} Einträge.")
         
     for eintrag in datenbank:
+       # Vergleiche die einzelnen Parameter und logge, wenn ein Unterschied besteht
+        if eintrag.get("fehlercode") != code:
+            app.logger.debug(f'Fehlercode stimmt nicht überein! Erwartet: {code}, Gefunden: {eintrag.get("fehlercode")}')
+        if eintrag.get("funktion") != funktion:
+            app.logger.debug(f'Funktion stimmt nicht überein! Erwartet: {funktion}, Gefunden: {eintrag.get("funktion")}')
+        if eintrag.get("zeile") != zeile:
+            app.logger.debug(f'Zeile stimmt nicht überein! Erwartet: {zeile}, Gefunden: {eintrag.get("zeile")}')
+        if eintrag.get("csb_version") != csb_version:
+            app.logger.debug(f'CSB-Version stimmt nicht überein! Erwartet: {csb_version}, Gefunden: {eintrag.get("csb_version")}')
+
+
+        
         if (eintrag.get("fehlercode") == code and
             eintrag.get("funktion") == funktion and
             eintrag.get("zeile") == zeile and
