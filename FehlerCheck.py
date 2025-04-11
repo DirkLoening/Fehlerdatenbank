@@ -1,8 +1,10 @@
+import logging
 from flask import Flask, request, jsonify
 import json
 
 app = Flask(__name__)
 app.debug = True
+logging.basicConfig(level=logging.DEBUG)  # Alle Logs ab DEBUG und höher werden angezeigt
 
 def lade_fehlerdatenbank():
     try:
@@ -25,6 +27,7 @@ def lade_fehlerdatenbank():
 
 @app.route("/check", methods=["GET"])
 def check_fehler():
+    app.logger.debug('Dies ist eine Debug-Nachricht')
     code = request.args.get("code")
     funktion = request.args.get("funktion")
     zeile = request.args.get("zeile")
