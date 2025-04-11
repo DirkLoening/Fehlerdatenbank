@@ -33,10 +33,10 @@ def check_fehler():
     zeile = request.args.get("zeile")
     csb_version = request.args.get("csb_version")
 
-    print(f"Erhaltener Fehlercode: {code}")
-    print(f"Erhaltene Funktion: {funktion}")
-    print(f"Erhaltene Zeile: {zeile}")
-    print(f"Erhaltene CSB-Version: {csb_version}")
+    app.logger.debug('Erhaltener Fehlercode: {code}')
+    app.logger.debug('Erhaltene Funktion: {funktion}')
+    app.logger.debug('Erhaltene Zeile: {zeile}')
+    app.logger.debug('Erhaltene CSB-Version: {csb_version}')
 
     datenbank = lade_fehlerdatenbank()
     if not datenbank:
