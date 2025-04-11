@@ -37,9 +37,9 @@ def check_fehler():
     
     datenbank = lade_fehlerdatenbank()
     if not datenbank:
-        print("Datenbank ist leer!")
+        app.logger.debug('Datenbank ist leer!')
     else:
-        print(f"Datenbank hat {len(datenbank)} Einträge.")
+        app.logger.debug('Datenbank hat {} Einträge.'.format(len(datenbank)))
         
     for eintrag in datenbank:
        # Vergleiche die einzelnen Parameter und logge, wenn ein Unterschied besteht
