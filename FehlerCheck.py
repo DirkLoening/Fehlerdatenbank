@@ -32,6 +32,11 @@ def check_fehler():
     datenbank = lade_fehlerdatenbank()
 
     for eintrag in datenbank:
+        print(f"Erhaltener Fehlercode: {code}")
+        print(f"Erhaltene Funktion: {funktion}")
+        print(f"Erhaltene Zeile: {zeile}")
+        print(f"Erhaltene CSB-Version: {csb_version}")
+
         if (eintrag.get("fehlercode") == code and
             eintrag.get("funktion") == funktion and
             eintrag.get("zeile") == zeile and
